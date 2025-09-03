@@ -1,0 +1,171 @@
+<!--
+  Single-file personal profile
+
+  How to modify:
+  - Replace "Your Name" (search for the text) with your real name.
+  - Replace avatar image at `assets/avatar.svg` (or swap the <img> to your photo path).
+  - Update CSS variables in the <style> :root block to change colors (--bg, --text, --accent, etc.).
+  - Edit project cards in the "Selected Work" section; replace images in `assets/`.
+  - Update contact email in the Contact section.
+  - This page intentionally contains no JavaScript. Keep edits to HTML/CSS for maximum compatibility.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>first webpage— Trisha Marie</title> 
+  <meta name="description" content="Professional profile of your name — developer and designer.">
+  <style>
+    /* ===== Style guide (editable) =====
+       This block is intentionally short and clear so beginners can customize the
+       page without hunting through many rules. Edit the variables to change
+       colors and the few layout values to change spacing.
+
+       Quick steps for students:
+       1) Change the colors: edit values inside :root (see names and purpose).
+       2) Change spacing: edit .wrap padding or section padding values.
+       3) Add a dark theme: copy the :root block and override variables under
+          an html.dark selector.
+
+       Variable meanings:
+         --bg     : page background color
+         --text   : main, high-contrast text color
+         --muted  : secondary or hint text color
+         --accent : primary color used for buttons and links
+         --card   : background for cards/panels
+    */
+
+    /* --- Colors & basic tokens (edit these) --- */
+    :root{
+      --bg: #f1d5e8;    /* page background */
+      --text: #0f1720;  /* main text */
+      --muted: #6b7280; /* muted/secondary */
+      --accent: #0ea5a9;/* buttons / links */
+      --card: #f8fafc;  /* cards / panels */
+    }
+
+    /* --- Base rules (usually no change needed) --- */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --- Layout tokens (adjust these to change spacing) --- */
+    .wrap { max-width: 920px; margin: 0 auto; padding: 28px; }
+
+    /* Header */
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 0; border-bottom: 1px solid #eef2f5;
+    }
+    .brand { font-weight: 700; letter-spacing: 0.3px; }
+    nav a { margin-left: 16px; color: var(--muted); text-decoration: none; font-size: 0.95rem; }
+
+    /* Hero */
+    .hero { padding: 48px 0; }
+    h1 { margin: 0 0 8px; font-size: 1.6rem; }
+    .lead { color: var(--muted); max-width: 58ch; margin: 6px 0 18px; }
+
+    /* Buttons */
+    .btn { display: inline-block; padding: 8px 14px; border-radius: 8px; background: var(--accent); color: #fff; text-decoration: none; }
+
+    /* Misc */
+    .muted { color: var(--muted); }
+    section { padding: 28px 0; border-bottom: 1px solid #f1f5f9; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .card { background: var(--card); padding: 14px; border-radius: 8px; }
+    footer { padding: 18px 0; text-align: center; color: var(--muted); font-size: 0.9rem; }
+
+    /* --- Responsive tweaks --- */
+    @media (max-width: 680px) {
+      .wrap { padding: 16px; }
+      .hero { padding: 28px 0; }
+      nav a { margin-left: 8px; }
+    }
+
+    /* --- Example dark theme (uncomment to use) ---
+    html.dark {
+      --bg: #0b1220;
+      --text: #e6eef6;
+      --muted: #9aa6b2;
+      --accent: #60a5fa;
+      --card: #0f1724;
+    }
+    */
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div style="display:flex;align-items:center;gap:12px">
+        <!-- Avatar: replace the `src` with your photo (square image recommended) -->
+        <div>
+          <!-- Brand: your display name -->
+        <img src="image.jpeg" alt="Avatar" width="64" height="64" style="border-radius:12px;flex:0 0 64px;object-fit:cover"/>
+        <div>
+          <div class="brand">Trisha Marie F. Estrecho</div>
+          <div class="muted" style="font-size:0.9rem"> junior Developer • Designer • Problem-solver </div>
+        </div>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#work">Favorites</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Hi — I'm Trisha</h1>
+        <p class="lead">I am a BSIT student at holy child central colleges.</p>
+        <p><a class="btn" href="#contact">Get in touch</a></p>
+      </section>
+
+  <!-- About: update this section with a short bio, location, and interests -->
+  <section id="about">
+        <h2>About</h2>
+        <p>I am a BSIT student at Holy child central colleges, and i want to learn more about HTML, and i like watching movies and playing games and my favorite food and flower is adobo and tulip.</p>
+        <ul class="muted" style="padding-left:1rem;margin-top:12px">
+          <li>Location: sto.nino south cotabato</li>
+          <li>Availability: Open to opportunities</li>
+          <li>Interests: learn new things,learn more about html</li>
+        </ul>
+      </section>
+
+  <!-- Selected Work: duplicate .card blocks to add projects. Replace images in assets/ -->
+  <section id="work">
+        <h2>favorites</h2>
+        <div class="grid">
+          <article class="card">
+            <img src="Unknown.jpeg" alt="Project 1" style="width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:10px"/>
+            <h3 style="margin-top:0">favorite movies</h3>
+            <p class="muted">So this is the movie i like.</p>
+          </article>
+          <article class="card">
+            <img src="tulip.webp" alt="Project 2" style="width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:10px"/>
+            <h3 style="margin-top:0">favorite color and flower</h3>
+            <p class="muted">So this is my favorite flower.</p>
+          </article>
+        </div>
+      </section>
+
+  <!-- Contact: set your email and links here -->
+  <section id="contact">
+        <h2>Contact</h2>
+        <p class="muted">Interested in working together? Email me at <a href="mailto:you@example.com">trmestrecho@email.com</a> or connect on <a href="#">https://www.facebook.com/trishamarie.estrecho</a>.</p>
+      </section>
+    </main>
+
+    <footer>
+      <!-- Footer: update year/name if desired -->
+      &copy; <!-- -->2025 Your Name — Built with clarity.
+    </footer>
+  </div>
+</body>
+</html>
